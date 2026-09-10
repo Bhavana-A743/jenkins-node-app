@@ -14,6 +14,11 @@ pipeline {
                 bat 'npm install'
             }
         }
+        stage('Run App') {
+            steps {
+                bat 'start node index.js'
+            }
+        }
 
         stage('Test') {
             steps {
@@ -21,9 +26,21 @@ pipeline {
             }
         }
 
-        stage('Run App') {
+        stage('Build Docker Image') {
             steps {
-                bat 'start node index.js'
+                bat 'docker build -t my-node-app .'
+            }
+        }
+
+        stage('Run Docker Container'){
+            steps {
+                bat 'docker run -d --name my-node-container -p 3000:3000 my-node-app'
+            }
+        }
+
+        stage('Docker Container Logs'){
+            steps {
+                bat 'docker logs node-container'
             }
         }
     }
