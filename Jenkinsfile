@@ -21,6 +21,11 @@ pipeline {
                 bat 'npm test'
             }
         }
+        stage('Check Docker') {
+            steps {
+                bat 'docker --version'
+            }
+     }
 
         stage('Build Docker Image') {
             steps {
