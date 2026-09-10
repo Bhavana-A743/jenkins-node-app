@@ -40,7 +40,7 @@ pipeline {
 
         stage('Docker Container Logs'){
             steps {
-                bat 'docker logs node-container'
+                bat 'docker logs my-node-container'
             }
         }
     }
