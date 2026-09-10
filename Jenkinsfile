@@ -28,19 +28,19 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t my-node-app .'
+                bat 'docker build -t jenkins-node-app .'
             }
         }
 
         stage('Run Docker Container'){
             steps {
-                bat 'docker run -d --name my-node-container -p 3000:3000 my-node-app'
+                bat 'docker run -d --name jenkins-node-container -p 3000:3000 jenkins-node-app'
             }
         }
 
         stage('Docker Container Logs'){
             steps {
-                bat 'docker logs my-node-container'
+                bat 'docker logs jenkins-node-container'
             }
         }
     }
