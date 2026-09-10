@@ -23,7 +23,7 @@ pipeline {
 
         stage('Run App') {
             steps {
-                bat 'start /B node index.js'
+                bat 'start node index.js'
             }
         }
     }
