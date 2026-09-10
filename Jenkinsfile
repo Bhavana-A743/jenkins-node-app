@@ -2,13 +2,11 @@ pipeline {
     agent any
 
     stages {
-
         stage('Clone') {
-     steps {
-            git 'https://github.com/Bhavana-A743/jenkins-node-app.git'
-           }
+            steps {
+                git 'https://github.com/Bhavana-A743/jenkins-node-app.git'
+            }
         }
-
         stage('Install') {
             steps {
                 bat 'npm install'
