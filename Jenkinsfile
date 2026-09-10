@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone') {
             steps {
-                git 'https://github.com/Bhavana-A743/jenkins-node-app.git'
+                git 'https://github.com/Bhavana-A743/jenkins-node-app'
             }
         }
 
