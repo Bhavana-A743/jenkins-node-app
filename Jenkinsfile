@@ -6,7 +6,7 @@ pipeline {
         stage('Clone') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/Bhavana-A743/jenkins-node-app.git'
+                    url: 'https://github.com/Bhavana-A743/jenkins-node-app'
             }
         }
 
